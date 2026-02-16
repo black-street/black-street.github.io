@@ -133,7 +133,7 @@
     </section>
 
     <section id="gallery-preview">
-        <h2>Our Garage</h2>
+        <h2>Our <span>Garage</span></h2>
         <div class="preview-grid">
             <div class="preview-item"><img src="https://media.discordapp.net/attachments/1380114276416622611/1469363150511013889/2026-02-05_23-39-58-281.png?ex=6993e8d2&is=69929752&hm=b6209e1c5839484055a1629b40985f652fbbb235bc759ff5407b7971cb2ba652&=&format=webp&quality=lossless"></div>
             <div class="preview-item"><img src="https://media.discordapp.net/attachments/1464677057287163914/1470721246412013568/Render.webp?format=webp"></div>
@@ -160,6 +160,15 @@
             const nav = document.getElementById('nav-links');
             nav.classList.toggle('active');
         }
+
+        // Fitur Auto-Close Menu setelah diklik
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('nav-links');
+                nav.classList.remove('active');
+            });
+        });
 
         // Animasi Counter Angka
         const counters = document.querySelectorAll('.counter');
